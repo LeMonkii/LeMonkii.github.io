@@ -113,6 +113,28 @@
             margin-top: -60px;
         }
 
+        .app_welcome__photo {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60%;
+            left: 20%;
+            padding-bottom: 80%;
+            overflow: hidden;
+            background: #222 center center no-repeat;
+            background-size: cover;
+            z-index: -1;
+            border: 5px solid #ff2549;
+            background: #1a1a2e;
+            box-shadow: 0 0 0px 5px #1e3985 inset;
+        }
+
+        .app_welcome__photo--visible {
+            display: block;
+            display: none;
+        }
+
         @keyframes welcomeMain {
             0%, 40% {
                 color: #1e3985;
@@ -210,6 +232,12 @@
             background: #1e3985;
             border-radius: 12px;
             cursor: pointer;
+            opacity: 1;
+            transition: opacity .4s;
+        }
+
+        .app_welcome__scroll--hidden {
+            opacity: 0;
         }
 
         .app_welcome__scroll__ball {
@@ -534,6 +562,7 @@
             <div class="app_welcome__content__before">ようこそ</div>
             <div class="app_welcome__content__main">Bienvenue</div>
         </div>
+        <div class="app_welcome__photo"></div>
     </div>
     <div class="app_welcome__scroll">
         <div class="app_welcome__scroll__ball"></div>
@@ -871,8 +900,42 @@
                 }
             }
 
+            if (scrollPosition > 150) {
+                document.querySelector('.app_welcome__scroll').classList.add('app_welcome__scroll--hidden');
+            } else {
+                document.querySelector('.app_welcome__scroll').classList.remove('app_welcome__scroll--hidden');
+            }
+
             previousScrollPosition = window.pageYOffset;
         }
+
+        const keySequence = [];
+        let konamiString = '';
+        const konamiCode = [
+            'ArrowUp',
+            'ArrowUp',
+            'ArrowDown',
+            'ArrowDown',
+            'ArrowLeft',
+            'ArrowRight',
+            'ArrowLeft',
+            'ArrowRight',
+            'b',
+            'a'
+        ];
+
+        document.addEventListener('keyup', function(e) {
+            keySequence.push(e.key);
+            keySequence.splice(
+                -konamiCode.length - 1, 
+                keySequence.length - konamiCode.length
+            );
+            konamiString = konamiCode.join('');
+
+            if (keySequence.join('').includes(konamiString)) {
+                document.querySelector('.app_welcome__photo').classList.add('app_welcome__photo--visible');
+            }
+        });
     </script>
 </body>
 </html>
