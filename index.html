@@ -235,6 +235,13 @@
             transition: opacity .4s;
         }
 
+        .app_welcome__scroll:focus, 
+        .app_welcome__scroll:active,
+        .app_welcome__scroll {
+            outline: none;
+            box-shadow: none;
+        }
+
         .app_welcome__scroll--hidden {
             opacity: 0;
         }
@@ -259,17 +266,12 @@
             100% {opacity: 0; transform: none;}
         }
 
-        #skills {
-            padding-top: 100px;
-        }
-
         .app_skills {
             display: grid;
             margin: auto;
             max-width: 1000px;
             padding: 0 20px;
             gap: 50px;
-            margin-bottom: 50px;
         }
 
         .app_skills__title {
@@ -295,9 +297,10 @@
             text-transform: uppercase;
             transform-origin: top left;
             color: #0e1425;
-            font-size: 50px;
+            font-size: 60px;
             z-index: -1;
             width: 100%;
+            margin-top: -10px;
             text-align: center;
         }
 
@@ -319,7 +322,7 @@
 
         .app_content__bg {
             margin: auto;
-            padding: 40px 0;
+            padding: 50px 0;
         }
 
         .app_content__bg--alt {
@@ -327,7 +330,7 @@
         }
 
         .app_content {
-            padding: 0 20px;
+            padding: 0 30px;
             max-width: 700px;
             margin: auto;
         }
@@ -360,6 +363,10 @@
             color: #FFF;
         }
 
+        a.app_timeline__company:hover {
+            color: #5151db;
+        }
+
         .app_timeline__title {
             font-weight: bold;
             font-size: 25px;
@@ -387,6 +394,7 @@
         .app_timeline__content {
             line-height: 25px;
             letter-spacing: .05em;
+            margin-top: 3px;
         }
 
         .app_timeline__content ul {
@@ -419,7 +427,6 @@
 
         .app_cv {
             text-align: center;
-            margin-top: 100px;
         }
 
         .app_cv a {
@@ -597,45 +604,46 @@
         <div class="app_welcome__scroll__ball"></div>
     </div>
     <div id="skills" class="target"></div>
-    <div class="app_skills__title app_animate app_animate--slow">Skills</div>
-    <div class="app_skills">
-        <div class="app_skill app_animate app_animate--top">
-            <div class="app_skill__title">
-                Back
+    <div class="app_content__bg app_content__bg--alt">
+        <div class="app_skills">
+            <div class="app_skill app_animate app_animate--top">
+                <div class="app_skill__title">
+                    Back
+                </div>
+                <ul>
+                    <li>PHP</li>
+                    <li>Symfony</li>
+                    <li>Wordpress</li>
+                    <li>Prestashop</li>
+                    <li>ReactJS</li>
+                </ul>
             </div>
-            <ul>
-                <li>PHP</li>
-                <li>Symfony</li>
-                <li>Wordpress</li>
-                <li>Prestashop</li>
-                <li>ReactJS</li>
-            </ul>
-        </div>
-        <div class="app_skill app_animate app_animate--top">
-            <div class="app_skill__title">
-                Front
+            <div class="app_skill app_animate app_animate--top">
+                <div class="app_skill__title">
+                    Front
+                </div>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>ReactJS</li>
+                </ul>
             </div>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
-                <li>ReactJS</li>
-            </ul>
-        </div>
-        <div class="app_skill app_animate app_animate--top">
-            <div class="app_skill__title">
-                Autre
+            <div class="app_skill app_animate app_animate--top">
+                <div class="app_skill__title">
+                    Autre
+                </div>
+                <ul>
+                    <li>Linux</li>
+                    <li>Git</li>
+                    <li>Scrum</li>
+                    <li>SEO</li>
+                    <li>Anglais</li>
+                </ul>
             </div>
-            <ul>
-                <li>Linux</li>
-                <li>Git</li>
-                <li>Scrum</li>
-                <li>SEO</li>
-                <li>Anglais</li>
-            </ul>
         </div>
     </div>
-    <div class="app_content__bg app_content__bg--alt">
+    <div class="app_content__bg">
         <div class="app_content">
             <div class="app_timelines">
                 <div class="app_title app_animate app_animate--slow">Expérience professionnelle</div>
@@ -716,7 +724,7 @@
             </div>
         </div>
     </div>
-    <div class="app_content__bg">
+    <div class="app_content__bg app_content__bg--alt">
         <div class="app_content">
             <div class="app_timelines">
                 <div class="app_title app_animate app_animate--slow">Formation</div>
@@ -780,7 +788,7 @@
             </div>
         </div>
     </div>
-    <div class="app_content__bg app_content__bg--alt">
+    <div class="app_content__bg">
         <div class="app_content">
             <div class="app_timelines">
                 <div class="app_title app_animate app_animate--slow">Autre</div>
@@ -870,6 +878,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="app_content__bg app_content__bg--alt">
         <div class="app_cv">
             <a href="https://ianisbrebion.fr/public/upload/CV-Ianis-Brebion.pdf" target="_blank">Curriculum Vitae</a>
         </div>
