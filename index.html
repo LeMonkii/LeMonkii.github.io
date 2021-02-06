@@ -96,7 +96,6 @@
         .app_welcome {
             height: 100%;
             position: relative;
-            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -417,31 +416,31 @@
             opacity: 1;
             color: #7bacf9;
         }
+
+        .app_cv {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .app_cv a {
+            border: 2px solid #e94560;
+            border-radius: 5px;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            color: #e94560;
+            transition: .4s;
+        }
+
+        .app_cv a:hover {
+            color: #FFF;
+            background: #e94560;
+        }
         
         @media screen and (max-width: 767px) {
             .desktop {
                 display: none;
-            }
-        }
-
-        @media screen and (min-width: 768px) and (min-height: 500px) {
-            .app_logo, .app_nav {
-                position: fixed;
-                opacity: 1;
-                transition: opacity .4s .2s;
-            }
-
-            .app_hide_nav .app_logo, 
-            .app_hide_nav .app_nav {
-                opacity: 0;
-            }
-
-            .target {
-                position: absolute;
-            }
-
-            .app_skills {
-                padding-top: 120px;
             }
         }
 
@@ -524,6 +523,36 @@
             }
         }
 
+        @media screen and (min-width: 768px) and (min-height: 500px) {
+            .app_logo, .app_nav {
+                position: fixed;
+                opacity: 1;
+                transition: opacity .4s .2s;
+            }
+
+            .app_hide_nav .app_logo, 
+            .app_hide_nav .app_nav {
+                opacity: 0;
+            }
+
+            .target {
+                position: absolute;
+            }
+
+            .app_skills {
+                padding-top: 120px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (min-height: 500px) {
+            .app_welcome__content {
+                line-height: 130px;
+                height: 130px;
+                margin-top: -65px;
+                font-size: 130px;
+            }
+        }
+
         .app_animate {
             opacity: 0;
             transition: opacity .4s, transform .4s;
@@ -542,27 +571,6 @@
 
         .app_animated {
             opacity: 1;
-        }
-
-        .app_cv {
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .app_cv a {
-            border: 2px solid #e94560;
-            border-radius: 5px;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            color: #e94560;
-            transition: .4s;
-        }
-
-        .app_cv a:hover {
-            color: #FFF;
-            background: #e94560;
         }
     </style>
 </head>
@@ -924,7 +932,7 @@
                 }
             }
 
-            if (scrollPosition > 150) {
+            if (scrollPosition > 100) {
                 document.querySelector('.app_welcome__scroll').classList.add('app_welcome__scroll--hidden');
             } else {
                 document.querySelector('.app_welcome__scroll').classList.remove('app_welcome__scroll--hidden');
