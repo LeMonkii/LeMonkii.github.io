@@ -219,6 +219,16 @@
             animation: welcomeSecond 5s 2s infinite alternate;
         }
 
+        .app_noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .app_welcome__scroll {
             position: absolute;
             bottom: 20px;
@@ -357,6 +367,7 @@
             font-size: 20px;
             opacity: 1;
             color: #575791;
+            transition: opacity .3s, color .3s;
         }
 
         .app_timeline--current .app_timeline__company {
@@ -365,6 +376,11 @@
 
         a.app_timeline__company:hover {
             color: #5151db;
+        }
+
+        .app_timeline--current a.app_timeline__company:hover {
+            color: #FFF;
+            opacity: .7;
         }
 
         .app_timeline__title {
@@ -589,7 +605,7 @@
         </div>
     </div>
     <div class="app_nav">
-        <a class="app_nav__item app_nav__item--cv" href="https://ianisbrebion.fr/public/upload/CV-Ianis-Brebion.pdf" target="_blank"><span class="mobile">CV</span><span class="desktop">Curriculum Vitae</span></a>       
+        <a class="app_nav__item app_nav__item--cv" href="/public/upload/CV-Ianis-Brebion.pdf" target="_blank"><span class="mobile">CV</span><span class="desktop">Curriculum Vitae</span></a>       
         <a class="app_nav__item" href="https://twitter.com/lemonkii" target="_blank">Twitter</a>       
         <a class="app_nav__item" href="https://www.linkedin.com/in/ianisbrebion/" target="_blank">LinkedIn</a>       
     </div>
@@ -600,7 +616,7 @@
         </div>
         <div class="app_welcome__photo"></div>
     </div>
-    <div class="app_welcome__scroll">
+    <div class="app_welcome__scroll app_noselect">
         <div class="app_welcome__scroll__ball"></div>
     </div>
     <div id="skills" class="target"></div>
@@ -881,7 +897,7 @@
     </div>
     <div class="app_content__bg app_content__bg--alt">
         <div class="app_cv">
-            <a href="https://ianisbrebion.fr/public/upload/CV-Ianis-Brebion.pdf" target="_blank">Curriculum Vitae</a>
+            <a href="/public/upload/CV-Ianis-Brebion.pdf" target="_blank" class="app_noselect">Curriculum Vitae</a>
         </div>
     </div>
     <script>
